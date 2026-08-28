@@ -1,0 +1,16 @@
+INSERT INTO employees (first_name, last_name, email, position, salary) VALUES
+('John', 'Doe', 'john.doe@example.com', 'Java Developer', 75000),
+('Jane', 'Smith', 'jane.smith@example.com', 'Senior Developer', 88000),
+('Michael', 'Brown', 'michael.brown@example.com', 'QA Engineer', 68000),
+('Emily', 'Johnson', 'emily.johnson@example.com', 'Project Manager', 90000),
+('David', 'Wilson', 'david.wilson@example.com', 'DevOps Engineer', 82000),
+('Sophia', 'Taylor', 'sophia.taylor@example.com', 'UI Designer', 70000),
+('James', 'Anderson', 'james.anderson@example.com', 'Backend Engineer', 79000),
+('Olivia', 'Thomas', 'olivia.thomas@example.com', 'HR Manager', 65000),
+('Daniel', 'Martinez', 'daniel.martinez@example.com', 'System Analyst', 76000),
+('Emma', 'Garcia', 'emma.garcia@example.com', 'Support Lead', 62000),
+('Lucas', 'Lee', 'lucas.lee@example.com', 'Cloud Engineer', 93000),
+('Ava', 'Harris', 'ava.harris@example.com', 'Business Analyst', 71000),
+('Noah', 'Clark', 'noah.clark@example.com', 'Data Engineer', 84000),
+('Mia', 'Lewis', 'mia.lewis@example.com', 'Frontend Developer', 77000),
+('Benjamin', 'Walker', 'benjamin.walker@example.com', 'Security Analyst', 81000);

@@ -1,7 +1,9 @@
 package com.example.employeeapi.controller;
 
+import com.example.employeeapi.exception.EmployeeNotFoundException;
 import com.example.employeeapi.model.Employee;
 import com.example.employeeapi.service.EmployeeService;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,6 +18,11 @@ public class EmployeeController {
 
     public EmployeeController(EmployeeService service) {
         this.service = service;
+    }
+
+    @ExceptionHandler(EmployeeNotFoundException.class)
+    public ResponseEntity<String> handleNotFound(EmployeeNotFoundException ex) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage());
     }
 
     @GetMapping
@@ -33,6 +40,12 @@ public class EmployeeController {
     public ResponseEntity<Employee> create(@RequestBody Employee e) {
         Employee saved = service.create(e);
         return ResponseEntity.created(URI.create("/api/employees/" + saved.getId())).body(saved);
+    }
+
+    @PostMapping("/bulk")
+    public ResponseEntity<List<Employee>> createBulk(@RequestBody List<Employee> employees) {
+        List<Employee> saved = service.createAll(employees);
+        return ResponseEntity.status(HttpStatus.CREATED).body(saved);
     }
 
     @PutMapping("/{id}")

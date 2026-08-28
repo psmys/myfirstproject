@@ -1,11 +1,12 @@
 package com.example.employeeapi.exception;
 
+import com.example.employeeapi.controller.EmployeeController;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
-@ControllerAdvice
+@ControllerAdvice(assignableTypes = EmployeeController.class)
 public class NotFoundAdvice {
 
     @ExceptionHandler(EmployeeNotFoundException.class)

@@ -20,6 +20,10 @@ public class EmployeeService {
         return repo.save(e);
     }
 
+    public List<Employee> createAll(List<Employee> employees) {
+        return repo.saveAll(employees);
+    }
+
     public List<Employee> getAll() {
         return repo.findAll();
     }
