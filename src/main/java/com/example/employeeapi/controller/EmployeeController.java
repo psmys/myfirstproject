@@ -20,10 +20,7 @@ public class EmployeeController {
         this.service = service;
     }
 
-    @ExceptionHandler(EmployeeNotFoundException.class)
-    public ResponseEntity<String> handleNotFound(EmployeeNotFoundException ex) {
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage());
-    }
+
 
     @GetMapping
     public List<Employee> list() {
