@@ -21,12 +21,14 @@ public class DataLoader implements CommandLineRunner {
         if (repo.count() > 0) return;
 
         List<Employee> list = new ArrayList<>();
+        String[] teams = {"Engineering", "Sales", "HR", "Operations"};
         for (int i = 1; i <= 15; i++) {
             list.add(new Employee(
                     "First" + i,
                     "Last" + i,
                     "emp" + i + "@example.com",
                     (i % 3 == 0) ? "Engineering" : (i % 3 == 1) ? "Sales" : "HR",
+                    teams[(i - 1) % teams.length],
                     40000 + i * 1500
             ));
         }

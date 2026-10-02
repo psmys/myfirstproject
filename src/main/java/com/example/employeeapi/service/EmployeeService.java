@@ -38,6 +38,7 @@ public class EmployeeService {
         existing.setLastName(incoming.getLastName());
         existing.setEmail(incoming.getEmail());
         existing.setPosition(incoming.getPosition());
+        existing.setTeam(incoming.getTeam());
         existing.setSalary(incoming.getSalary());
         return repo.save(existing);
     }

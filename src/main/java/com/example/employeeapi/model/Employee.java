@@ -14,15 +14,21 @@ public class Employee {
     private String lastName;
     private String email;
     private String position;
+    private String team;
     private double salary;
 
     public Employee() {}
 
     public Employee(String firstName, String lastName, String email, String position, double salary) {
+        this(firstName, lastName, email, position, null, salary);
+    }
+
+    public Employee(String firstName, String lastName, String email, String position, String team, double salary) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.position = position;
+        this.team = team;
         this.salary = salary;
     }
 
@@ -64,6 +70,14 @@ public class Employee {
 
     public void setPosition(String position) {
         this.position = position;
+    }
+
+    public String getTeam() {
+        return team;
+    }
+
+    public void setTeam(String team) {
+        this.team = team;
     }
 
     public double getSalary() {

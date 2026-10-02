@@ -27,6 +27,11 @@ public class EmployeeController {
         return service.getAll();
     }
 
+    @GetMapping("/ping")
+    public ResponseEntity<String> ping() {
+        return ResponseEntity.ok("pong");
+    }
+
     @GetMapping("/{id}")
     public ResponseEntity<Employee> get(@PathVariable Long id) {
         Employee e = service.getById(id);
