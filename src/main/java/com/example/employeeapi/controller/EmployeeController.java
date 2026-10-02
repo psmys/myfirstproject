@@ -1,6 +1,5 @@
 package com.example.employeeapi.controller;
 
-import com.example.employeeapi.exception.EmployeeNotFoundException;
 import com.example.employeeapi.model.Employee;
 import com.example.employeeapi.service.EmployeeService;
 import org.springframework.http.HttpStatus;
@@ -23,8 +22,16 @@ public class EmployeeController {
 
 
     @GetMapping
-    public List<Employee> list() {
-        return service.getAll();
+    public List<Employee> list(@RequestParam(required = false) String team) {
+        if (team == null || team.isBlank()) {
+            return service.getAll();
+        }
+        return service.getByTeam(team);
+    }
+
+    @GetMapping("/team/{team}")
+    public List<Employee> getByTeam(@PathVariable String team) {
+        return service.getByTeam(team);
     }
 
     @GetMapping("/ping")

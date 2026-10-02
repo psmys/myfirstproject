@@ -28,6 +28,10 @@ public class EmployeeService {
         return repo.findAll();
     }
 
+    public List<Employee> getByTeam(String team) {
+        return repo.findByTeamIgnoreCase(team);
+    }
+
     public Employee getById(Long id) {
         return repo.findById(id).orElseThrow(() -> new EmployeeNotFoundException(id));
     }
